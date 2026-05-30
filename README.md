@@ -102,7 +102,7 @@ Run notebooks in order:
 
 | # | Notebook | Description |
 |---|---|---|
-| 1 | `01_well_log_preprocessing.ipynb` | Loads LAS files, imputes missing well log values, prepares final dataset |
+| 1 | `01_well_data_preprocessing.ipynb` | Loads LAS files, imputes missing well log values, prepares final dataset |
 | 2 | `02_utrecht_boundary_extractionpermian_formation_screening.ipynb` | Extracts Utrecht province and city boundaries from Dutch administrative GML data |
 | 3 | `03_utrecht_formation_coverage.ipynb` | Screens ThermoGIS Permian formations for Utrecht spatial coverage |
 | 4 | `04_slochteren_aquifer_simulation.ipynb` | Runs ThermoGIS geothermal doublet simulation clipped to Utrecht |
@@ -160,10 +160,10 @@ pip install -r requirements.txt
 
 4. Run notebooks in order from the `notebooks/` folder:
 ```
-01_utrecht_boundary_extraction.ipynb
-02_permian_formation_screening.ipynb
-03_well_log_preprocessing.ipynb
-04_utrecht_geothermal_simulation.ipynb
+01_well_data_preprocessing.ipynb
+02_utrecht_boundary_extraction.ipynb
+03_utrecht_formation_coverage.ipynb
+04_slochteren_aquifer_simulation.ipynb
 ```
 
 > **Note:** Run cells in order within each notebook. Processed files will be automatically saved to `data/processed/`.
