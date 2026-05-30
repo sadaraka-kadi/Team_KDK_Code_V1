@@ -5,7 +5,7 @@
 
 ## Project Overview
 
-This repository contains Team KDK's full data pipeline and analysis for the **SPE Africa Datathon 2026**, focused on the geothermal energy project in Utrecht, Netherlands. The work covers administrative boundary extraction, ThermoGIS formation screening, well log data preprocessing, missing data imputation, and geothermal doublet simulation using statistical and machine learning approaches.
+This repository contains Team KDK's full data pipeline and analysis for the **SPE Africa Datathon 2026**, focused on the geothermal energy project in Utrecht, Netherlands. The work covers well log data preprocessing, administrative boundary extraction, ThermoGIS formation screening, and geothermal doublet simulation across five enhancement scenarios to assess Utrecht's thermal energy potential against targets of 5, 10, and 15 MWth.
 
 ---
 
@@ -24,8 +24,8 @@ This repository contains Team KDK's full data pipeline and analysis for the **SP
 Team_KDK_Code_V1/
 │
 ├── data/
-│   ├── raw/                    # Original, unmodified input data (see data/raw/README.md)
-│   └── processed/              # Cleaned and transformed data
+│   ├── raw/                         # Original, unmodified input data (see data/raw/README.md)
+│   └── processed/                   # Cleaned and transformed data
 │
 ├── notebooks/
 │   ├── 01_well_data_preprocessing.ipynb
@@ -33,9 +33,9 @@ Team_KDK_Code_V1/
 │   ├── 03_utrecht_formation_coverage.ipynb
 │   └── 04_slochteren_aquifer_simulation.ipynb
 │
-├── outputs/               # Plots, figures, and results
-├── reports/               # Final report and presentation slides
-├── src/                   # Reusable Python scripts
+├── outputs/                         # Simulation results, plots, and figures
+├── reports/                         # Final report and presentation slides
+├── src/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -92,9 +92,23 @@ Scenarios: `BaseCase` (no suffix), `_HP`, `_STIM`, `_STIM_HP`
 | `JUT-01log.csv` | `01_well_data_preprocessing.ipynb` | LAS converted to CSV |
 | `PKP-01log.csv` | `01_well_data_preprocessing.ipynb` | LAS converted to CSV |
 | `target_lithologies_filled.csv` | `01_well_data_preprocessing.ipynb` | Cleaned dataset with imputed values |
-| `utrecht_province.shp` | `02_utrecht_boundary_extraction.ipynb` | Utrecht province boundary |
-| `utrecht_city.shp` | `02_utrecht_boundary_extraction.ipynb` | Utrecht city boundary |
-| `output_results.nc` | `04_slochteren_aquifer_simulation.ipynb` | Doublet simulation results |
+| `utrecht_province.shp` (+ sidecar files) | `02_utrecht_boundary_extraction.ipynb` | Utrecht province boundary |
+| `utrecht_city.shp` (+ sidecar files) | `02_utrecht_boundary_extraction.ipynb` | Utrecht city boundary |
+
+### Simulation Outputs (`outputs/`)
+
+| File | Scenario | Description |
+|---|---|---|
+| `baseline_results.nc` | Baseline | Full spatial grid |
+| `baseline_viable.csv` | Baseline | Viable doublet locations |
+| `hp_results.nc` | Heat Pump | Full spatial grid |
+| `hp_viable.csv` | Heat Pump | Viable doublet locations |
+| `stim_results.nc` | Stimulation | Full spatial grid |
+| `stim_viable.csv` | Stimulation | Viable doublet locations |
+| `stim_hp_results.nc` | STIM+HP | Full spatial grid |
+| `stim_hp_viable.csv` | STIM+HP | Viable doublet locations |
+| `nearby_stim_hp.csv` | STIM+HP | Viable doublet locations close to Utrecht City |
+| `power_and_npv_map` | STIM+HP | Top 3 Locations Map |
 
 ---
 
@@ -107,7 +121,7 @@ Run notebooks in order:
 | 1 | `01_well_data_preprocessing.ipynb` | Loads LAS files, imputes missing well log values, prepares final dataset |
 | 2 | `02_utrecht_boundary_extraction.ipynb` | Extracts Utrecht province and city boundaries from Dutch administrative GML data |
 | 3 | `03_utrecht_formation_coverage.ipynb` | Screens ThermoGIS Permian formations for Utrecht spatial coverage |
-| 4 | `04_slochteren_aquifer_simulation.ipynb` | Runs ThermoGIS geothermal doublet simulation clipped to Utrecht |
+| 4 | `04_slochteren_aquifer_simulation.ipynb` | Runs ThermoGIS geothermal doublet simulation across all five scenarios |
 
 ---
 
@@ -121,22 +135,46 @@ Run notebooks in order:
   - **`porosity_pct`** — computed via the Porosity-Density equation for EVD-01; predicted using Random Forest for JUT-01 (MAE: 0.3128%)
 - Extracted Utrecht province and city boundaries from Dutch administrative data (`administrativeunits.gml`)
 - Screened all Permian ThermoGIS formations for spatial coverage over Utrecht
+- Identified Slochteren Fm & Upper Slochteren Mb (ROSL_ROSLU) as the target formation
+
+### Simulation Scenarios
+Four doublet scenarios were modelled using `pythermogis`, with results assessed against thermal power targets of **5, 10, and 15 MWth** for Utrecht city:
+
+| Scenario | Description |
+|---|---|
+| **Baseline** | Standard doublet, no enhancement |
+| **Heat Pump (HP)** | Heat pump added to boost thermal output |
+| **Stimulation (STIM)** | Well stimulation to improve flow rates |
+| **STIM+HP** | Combined stimulation and heat pump |
 
 ### Models Used
 - **Random Forest Regressor** (`scikit-learn`) — for imputing missing bulk density and porosity values
 - **Porosity-Density Equation** — physics-based formula using Slochteren Sandstone constants
-  
+
   $$\phi = \frac{\rho_{ma} - \rho_b}{\rho_{ma} - \rho_{fl}} \times 100$$
 
   Where:
   - $\rho_{ma}$ = 2.65 g/cc (quartz sandstone matrix density)
   - $\rho_{fl}$ = 1.07 g/cc (saline formation brine density)
-- **ThermoGIS Doublet Simulation** (`pythermogis`) — geothermal energy potential modelling
+
+- **ThermoGIS Doublet Simulation** (`pythermogis`) — geothermal energy potential modelling across Utrecht
+
 ---
 
-## Results
+## Results Summary
 
-*Results and findings to be added.*
+| Scenario | Viable Sites | Max Power | Max NPV | ≥5 MWth | ≥10 MWth | ≥15 MWth |
+|---|---|---|---|---|---|---|
+| Baseline | 4,971 | 6.8 MWth | -3.1 M€ | ✅ | ❌ | ❌ |
+| Heat Pump | 4,971 | 7.7 MWth | +7.3 M€ | ✅ | ❌ | ❌ |
+| Stimulation | 4,971 | 12.3 MWth | -1.4 M€ | ✅ | ✅ | ❌ |
+| **STIM+HP** | **4,971** | **~9.5 MWth** | **+14.5 M€** | ✅ | ✅ | ❌ |
+| ORC | 3,635 | 0.71 MWth | -10.6 M€ | ❌ | ❌ | ❌ |
+
+### Key Findings
+- **STIM+HP is the recommended strategy** — the only scenario close to meeting the 10 MWth target with a positive NPV
+- **15 MWth( 10 MWth Heating + 5 MWth Cooling) target requires multi-doublet development** — a single doublet cannot reach this threshold under any scenario tested
+- **Proposed well sites KDK-01, KDK-02, KDK-03** fall within the high-performance STIM+HP zone near Utrecht city
 
 ---
 
@@ -167,7 +205,7 @@ pip install -r requirements.txt
 04_slochteren_aquifer_simulation.ipynb
 ```
 
-> **Note:** Run cells in order within each notebook. Processed files will be automatically saved to `data/processed/`.
+> **Note:** Run cells in order within each notebook. Processed files will be automatically saved to `data/processed/` and simulation outputs to `outputs/`.
 
 ---
 
@@ -184,7 +222,6 @@ See [`requirements.txt`](requirements.txt) for the full list. Key libraries:
 | `openpyxl` | Reading Excel well path data |
 | `geopandas` | Geospatial data processing |
 | `xarray` | Reading NetCDF grid files |
-| `seaborn` | Statistical data visualisation |
 | `matplotlib` | Plotting and figures |
 | `pythermogis` | ThermoGIS geothermal simulation |
 | `pygridsio` | Reading ThermoGIS grid files |
