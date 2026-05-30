@@ -166,10 +166,9 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 | Scenario | Viable Sites | Max Power | Max NPV | ≥5 MWth | ≥10 MWth | ≥15 MWth |
 |---|---|---|---|---|---|---|
 | Baseline | 4,971 | 6.8 MWth | -3.1 M€ | ✅ | ❌ | ❌ |
-| Heat Pump | 4,971 | 7.7 MWth | +7.3 M€ | ✅ | ❌ | ❌ |
-| Stimulation | 4,971 | 12.3 MWth | -1.4 M€ | ✅ | ✅ | ❌ |
-| **STIM+HP** | **4,971** | **~9.5 MWth** | **+14.5 M€** | ✅ | ✅ | ❌ |
-| ORC | 3,635 | 0.71 MWth | -10.6 M€ | ❌ | ❌ | ❌ |
+| Heat Pump | 4,971 | 7.3 MWth | +5.5 M€ | ✅ | ❌ | ❌ |
+| Stimulation | 4,971 | 11.2 MWth | -1.8 M€ | ✅ | ✅ | ❌ |
+| **STIM+HP** | **4,971** | **9.4 MWth** | **+10.4 M€** | ✅ | ✅ | ❌ |
 
 ### Key Findings
 - **STIM+HP is the recommended strategy** — the only scenario close to meeting the 10 MWth target with a positive NPV
