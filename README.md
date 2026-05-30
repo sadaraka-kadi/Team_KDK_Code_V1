@@ -123,6 +123,7 @@ Run notebooks in order:
 ### Models Used
 - **Random Forest Regressor** (`scikit-learn`) — for imputing missing bulk density and porosity values
 - **Porosity-Density Equation** — physics-based formula using Slochteren Sandstone constants
+  
   $$\phi = \frac{\rho_{ma} - \rho_b}{\rho_{ma} - \rho_{fl}} \times 100$$
 
   Where:
