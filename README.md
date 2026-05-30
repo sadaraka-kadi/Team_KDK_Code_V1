@@ -112,25 +112,23 @@ Run notebooks in order:
 ## Methods
 
 ### Data Preprocessing
-- Extracted Utrecht province and city boundaries from Dutch administrative data (`administrativeunits.gml`)
-- Screened all Permian ThermoGIS formations for spatial coverage over Utrecht
 - Loaded well log data from LAS files and converted to CSV format
 - Identified and filled missing values in three key columns:
   - **`depth_tvd_m`** — interpolated from well path trajectory data
   - **`bulk_density_gcc`** — predicted using a Random Forest Regressor (MAE: 0.0065 g/cc)
   - **`porosity_pct`** — computed via the Porosity-Density equation for EVD-01; predicted using Random Forest for JUT-01 (MAE: 0.3128%)
+- Extracted Utrecht province and city boundaries from Dutch administrative data (`administrativeunits.gml`)
+- Screened all Permian ThermoGIS formations for spatial coverage over Utrecht
 
 ### Models Used
 - **Random Forest Regressor** (`scikit-learn`) — for imputing missing bulk density and porosity values
 - **Porosity-Density Equation** — physics-based formula using Slochteren Sandstone constants
+  $$\phi = \frac{\rho_{ma} - \rho_b}{\rho_{ma} - \rho_{fl}} \times 100$$
+
+  Where:
+  - $\rho_{ma}$ = 2.65 g/cc (quartz sandstone matrix density)
+  - $\rho_{fl}$ = 1.07 g/cc (saline formation brine density)
 - **ThermoGIS Doublet Simulation** (`pythermogis`) — geothermal energy potential modelling
-
-$$\phi = \frac{\rho_{ma} - \rho_b}{\rho_{ma} - \rho_{fl}} \times 100$$
-
-Where:
-- $\rho_{ma}$ = 2.65 g/cc (quartz sandstone matrix density)
-- $\rho_{fl}$ = 1.07 g/cc (saline formation brine density)
-
 ---
 
 ## Results
