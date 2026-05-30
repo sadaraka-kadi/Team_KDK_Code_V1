@@ -103,7 +103,7 @@ Run notebooks in order:
 | # | Notebook | Description |
 |---|---|---|
 | 1 | `01_well_data_preprocessing.ipynb` | Loads LAS files, imputes missing well log values, prepares final dataset |
-| 2 | `02_utrecht_boundary_extractionpermian_formation_screening.ipynb` | Extracts Utrecht province and city boundaries from Dutch administrative GML data |
+| 2 | `02_utrecht_boundary_extraction.ipynb` | Extracts Utrecht province and city boundaries from Dutch administrative GML data |
 | 3 | `03_utrecht_formation_coverage.ipynb` | Screens ThermoGIS Permian formations for Utrecht spatial coverage |
 | 4 | `04_slochteren_aquifer_simulation.ipynb` | Runs ThermoGIS geothermal doublet simulation clipped to Utrecht |
 
