@@ -12,7 +12,9 @@ This repository contains Team KDK's full data pipeline and analysis for the **SP
 ## Team
 
 **Team KDK**
-- SPE Africa Datathon 2026
+- Kadi Sadaraka
+- Diana Bosibori
+- Keith Joshua
 
 ---
 
