@@ -26,10 +26,10 @@ Team_KDK_Code_V1/
 │   └── processed/              # Cleaned and transformed data
 │
 ├── notebooks/
-│   ├── 01_utrecht_boundary_extraction.ipynb
-│   ├── 02_permian_formation_screening.ipynb
-│   ├── 03_well_log_preprocessing.ipynb
-│   └── 04_utrecht_geothermal_simulation.ipynb
+│   ├── 01_well_data_preprocessing.ipynb
+│   ├── 02_utrecht_boundary_extraction.ipynb
+│   ├── 03_utrecht_formation_coverage.ipynb
+│   └── 04_slochteren_aquifer_simulation.ipynb
 │
 ├── outputs/               # Plots, figures, and results
 ├── reports/               # Final report and presentation slides
