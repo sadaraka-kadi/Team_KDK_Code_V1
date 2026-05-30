@@ -8,7 +8,7 @@
 - Unzip and place `administrativeunits.gml` in this folder (`data/raw/`)
 
 ### 2. ThermoGIS Grids (`.nc` files)
-- **Used by:** `utrecht_geothermal_simulation.ipynb`
-- **Download:** https://www.thermogis.nl/
+- **Used by:** `utrecht_formation_coverage.ipynb`
+- **Download:** https://www.thermogis.nl/sites/default/files/2026-05/for_external_use.zip)
 - Navigate to: `ThermoGIS_grids_2_5_1 > 6_Permian > Slochteren Fm & Upper Slochteren Mb (ROSL&ROSLU) > BaseCase`
 - Place all `.nc` files in this folder (`data/raw/`)
