@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Large data files - download manually (see data/raw/README.md)
+data/raw/administrativeunits.gml
