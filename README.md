@@ -207,9 +207,8 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 | Annual heat production | 430,319 GJ/yr |
 | Total CAPEX | 14.28 M€ |
 | **LCOE** | **14.11 €/GJ (50.8 €/MWh)** |
-| Benchmark (NL natural gas DH) | 12–18 €/GJ |
 
-> The LCOE of **14.11 €/GJ** is competitive with natural gas district heating and significantly cheaper than grid-powered heat pumps (18–25 €/GJ), confirming economic viability. See [`reports/lcoe_parameters.md`](reports/lcoe_parameters.md) for full parameter justifications.
+> See [`reports/lcoe_parameters.md`](reports/lcoe_parameters.md) for full parameter justifications.
 
 ---
 
