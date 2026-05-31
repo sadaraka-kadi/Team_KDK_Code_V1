@@ -38,6 +38,7 @@ Team_KDK_Code_V1/
 ├── reports/
 │   ├── Team_KDK_LCOE.xlsx           # LCOE spreadsheet
 │   └── lcoe_parameters.md           # LCOE parameter justifications
+|
 ├── .gitignore
 ├── LICENSE
 ├── README.md
