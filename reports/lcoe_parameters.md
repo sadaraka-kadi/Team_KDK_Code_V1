@@ -87,5 +87,3 @@
 | Annual heat production | 430,319 | GJ/yr |
 | Total CAPEX | 14.28 | M€ |
 
-> **Benchmark:** The LCOE of 14.11 €/GJ is competitive with natural gas district heating (12–18 €/GJ) and significantly below grid-powered heat pumps (18–25 €/GJ), confirming the economic viability of STIM+HP geothermal development for Utrecht's district heating network.
-
