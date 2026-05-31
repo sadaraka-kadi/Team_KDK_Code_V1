@@ -33,12 +33,23 @@ Team_KDK_Code_V1/
 │   ├── 03_utrecht_formation_coverage.ipynb
 │   └── 04_slochteren_aquifer_simulation.ipynb
 │
-├── outputs/                         # Simulation results, plots, and figures
+├── outputs/
+│   ├── baseline_results.nc          # Baseline — full spatial grid
+│   ├── baseline_viable.csv          # Baseline — viable doublet locations
+│   ├── hp_results.nc                # Heat Pump — full spatial grid
+│   ├── hp_viable.csv                # Heat Pump — viable doublet locations
+│   ├── stim_results.nc              # Stimulation — full spatial grid
+│   ├── stim_viable.csv              # Stimulation — viable doublet locations
+│   ├── stim_hp_results.nc           # STIM+HP — full spatial grid
+│   ├── stim_hp_viable.csv           # STIM+HP — viable doublet locations
+│   ├── stim_hp_lookup.json          # STIM+HP — coordinate lookup (4,971 grid cells)
+│   ├── nearby_stim_hp.csv           # STIM+HP — viable locations near Utrecht city
+│   └── power_and_npv_map.png        # STIM+HP — top 3 locations map
 │
 ├── reports/
 │   ├── Team_KDK_LCOE.xlsx           # LCOE spreadsheet
 │   └── lcoe_parameters.md           # LCOE parameter justifications
-|
+│
 ├── .gitignore
 ├── LICENSE
 ├── README.md
