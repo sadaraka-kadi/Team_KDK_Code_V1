@@ -5,7 +5,7 @@
 
 ## Project Overview
 
-This repository contains Team KDK's full data pipeline and analysis for the **SPE Africa Datathon 2026**, focused on the geothermal energy project in Utrecht, Netherlands. The work covers well log data preprocessing, administrative boundary extraction, ThermoGIS formation screening, and geothermal doublet simulation across five enhancement scenarios to assess Utrecht's thermal energy potential against targets of 5, 10, and 15 MWth.
+This repository contains Team KDK's full data pipeline and analysis for the **SPE Africa Datathon 2026**, focused on the geothermal energy project in Utrecht, Netherlands. The work covers well log data preprocessing, administrative boundary extraction, ThermoGIS formation screening, and geothermal doublet simulation across four enhancement scenarios to assess Utrecht's thermal energy potential against targets of 5, 10, and 15 MWth. An LCOE analysis is provided for the recommended development scenario.
 
 ---
 
@@ -34,8 +34,10 @@ Team_KDK_Code_V1/
 │   └── 04_slochteren_aquifer_simulation.ipynb
 │
 ├── outputs/                         # Simulation results, plots, and figures
-├── reports/                         # Final report and presentation slides
-├── src/
+│
+├── reports/
+│   ├── Team_KDK_LCOE.xlsx           # LCOE spreadsheet
+│   └── lcoe_parameters.md           # LCOE parameter justifications
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -107,8 +109,9 @@ Scenarios: `BaseCase` (no suffix), `_HP`, `_STIM`, `_STIM_HP`
 | `stim_viable.csv` | Stimulation | Viable doublet locations |
 | `stim_hp_results.nc` | STIM+HP | Full spatial grid |
 | `stim_hp_viable.csv` | STIM+HP | Viable doublet locations |
-| `nearby_stim_hp.csv` | STIM+HP | Viable doublet locations close to Utrecht City |
-| `power_and_npv_map` | STIM+HP | Top 3 Locations Map |
+| `stim_hp_lookup.json` | STIM+HP | Coordinate lookup for all 4,971 grid cells |
+| `nearby_stim_hp.csv` | STIM+HP | Viable doublet locations close to Utrecht city |
+| `power_and_npv_map` | STIM+HP | Top 3 locations map |
 
 ---
 
@@ -121,7 +124,7 @@ Run notebooks in order:
 | 1 | `01_well_data_preprocessing.ipynb` | Loads LAS files, imputes missing well log values, prepares final dataset |
 | 2 | `02_utrecht_boundary_extraction.ipynb` | Extracts Utrecht province and city boundaries from Dutch administrative GML data |
 | 3 | `03_utrecht_formation_coverage.ipynb` | Screens ThermoGIS Permian formations for Utrecht spatial coverage |
-| 4 | `04_slochteren_aquifer_simulation.ipynb` | Runs ThermoGIS geothermal doublet simulation across all five scenarios |
+| 4 | `04_slochteren_aquifer_simulation.ipynb` | Runs ThermoGIS geothermal doublet simulation across all four scenarios |
 
 ---
 
@@ -145,7 +148,7 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 | **Baseline** | Standard doublet, no enhancement |
 | **Heat Pump (HP)** | Heat pump added to boost thermal output |
 | **Stimulation (STIM)** | Well stimulation to improve flow rates |
-| **STIM+HP** | Combined stimulation and heat pump |
+| **STIM+HP** | Combined stimulation and heat pump — recommended scenario |
 
 ### Models Used
 - **Random Forest Regressor** (`scikit-learn`) — for imputing missing bulk density and porosity values
@@ -171,9 +174,30 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 | **STIM+HP** | **4,971** | **9.4 MWth** | **+10.4 M€** | ✅ | ✅ | ❌ |
 
 ### Key Findings
-- **STIM+HP is the recommended strategy** — the only scenario close to meeting the 10 MWth target with a positive NPV
-- **15 MWth( 10 MWth Heating + 5 MWth Cooling) target requires multi-doublet development** — a single doublet cannot reach this threshold under any scenario tested
+- **STIM+HP is the recommended strategy** — the only scenario meeting the 10 MWth target with a positive NPV
+- **15 MWth target (10 MWth heating + 5 MWth cooling) requires multi-doublet development** — a single doublet cannot reach this threshold under any scenario tested
 - **Proposed well sites KDK-01, KDK-02, KDK-03** fall within the high-performance STIM+HP zone near Utrecht city
+
+### Proposed Development — Two Doublet STIM+HP
+
+| Site | Coordinates (x, y) | Power (MWth) | NPV (M€) | Distance to city |
+|---|---|---|---|---|
+| KDK-01 | (142000, 459000) | 9.12 | +9.91 | 2.8 km |
+| KDK-02 | (138000, 465000) | 9.20 | +9.83 | 4.9 km |
+| KDK-03 *(contingency)* | (151000, 455000) | 8.46 | +8.15 | 9.2 km |
+| **Combined (KDK-01 + KDK-02)** | — | **18.32 MWth** | — | — |
+
+### LCOE Analysis
+
+| Parameter | Value |
+|---|---|
+| Scenarios | 2 × STIM+HP doublets (KDK-01 + KDK-02) |
+| Annual heat production | 430,319 GJ/yr |
+| Total CAPEX | 14.28 M€ |
+| **LCOE** | **14.11 €/GJ (50.8 €/MWh)** |
+| Benchmark (NL natural gas DH) | 12–18 €/GJ |
+
+> The LCOE of **14.11 €/GJ** is competitive with natural gas district heating and significantly cheaper than grid-powered heat pumps (18–25 €/GJ), confirming economic viability. See [`reports/lcoe_parameters.md`](reports/lcoe_parameters.md) for full parameter justifications.
 
 ---
 
