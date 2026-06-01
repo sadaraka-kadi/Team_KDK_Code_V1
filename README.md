@@ -17,6 +17,20 @@ This repository contains Team KDK's full data pipeline and analysis for the **SP
 - Keith Muderwa : 5742016
 
 ---
+## Problem Statement
+
+Utrecht, Netherlands seeks to develop its geothermal resources to meet urban 
+district heating and cooling demand. The challenge is to assess whether the 
+Slochteren aquifer (ROSL_ROSLU) can deliver:
+
+- ≥ 10 MWth for district heating
+- ≥ 5 MWth for district cooling
+
+using commercially viable doublet configurations, and to identify the optimal 
+enhancement scenario and development locations that meet these targets 
+economically.
+
+---
 
 ## Repository Structure
 
