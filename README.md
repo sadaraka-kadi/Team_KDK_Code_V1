@@ -12,8 +12,8 @@ This repository contains Team KDK's full data pipeline and analysis for the **SP
 ## Team
 
 **Team KDK**
-- Kadi Sadaraka
-- Diana Bosibori
+- Kadi Sadaraka : 5980688
+- Diana Bosibori : 5618695
 - Keith Muderwa : 5742016
 
 ---
