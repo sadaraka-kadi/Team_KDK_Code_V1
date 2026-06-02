@@ -223,7 +223,7 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 | **STIM+HP** | **4,971** | **9.4 MWth** | **+10.4 M€** | ✅ | ✅ | ❌ |
 
 ### Key Findings
-- **STIM+HP is the recommended strategy** — the only scenario meeting the 10 MWth target with a positive NPV
+- **STIM+HP is the recommended strategy** — the only scenario almost meeting the 10 MWth target with a positive NPV
 - **15 MWth target (10 MWth heating + 5 MWth cooling) requires multi-doublet development** — a single doublet cannot reach this threshold under any scenario tested
 - **Proposed well sites KDK-01, KDK-02, KDK-03** fall within the high-performance STIM+HP zone near Utrecht city
 
