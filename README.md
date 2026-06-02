@@ -224,13 +224,13 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 | Total CAPEX | 14.28 M€ |
 | **LCOE** | **14.11 €/GJ (50.8 €/MWh)** |
 
-> See [`reports/lcoe_parameters.md`](reports/lcoe_parameters.md) for full parameter justifications.
+> See [`reports/lcoe_parameters.md`](reports/lcoe_parameters.md)
 
-# LCOE Parameter Justifications
+### LCOE Parameter Justifications
 
 ---
 
-## Subsurface Parameters
+#### Subsurface Parameters
 
 | Parameter | Value | Unit | Justification |
 |---|---|---|---|
@@ -242,7 +242,7 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 
 ---
 
-## Well & Surface Costs
+#### Well & Surface Costs
 
 | Parameter | Value | Unit | Justification |
 |---|---|---|---|
@@ -254,7 +254,7 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 
 ---
 
-## Heat System Parameters
+#### Heat System Parameters
 
 | Parameter | Value | Unit | Justification |
 |---|---|---|---|
@@ -269,7 +269,7 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 
 ---
 
-## Rock & Fluid Properties
+#### Rock & Fluid Properties
 
 | Parameter | Value | Unit | Justification |
 |---|---|---|---|
@@ -280,7 +280,7 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 
 ---
 
-## Ultimate Recovery
+#### Ultimate Recovery
 
 | Parameter | Value | Unit | Justification |
 |---|---|---|---|
@@ -289,7 +289,7 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 
 ---
 
-## Financial Parameters
+#### Financial Parameters
 
 | Parameter | Value | Unit | Justification |
 |---|---|---|---|
@@ -305,7 +305,7 @@ Four doublet scenarios were modelled using `pythermogis`, with results assessed 
 
 ---
 
-## Result
+### Result
 
 | Metric | Value | Unit |
 |---|---|---|
