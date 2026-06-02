@@ -313,7 +313,7 @@ The surface facilities are designed to serve Utrecht's mixed-use urban district 
 | Parameter | Value |
 |---|---|
 | Purpose | Boosts geothermal heat to district heating supply temperature |
-| Mode | Winter heating |
+| Mode | Heating |
 | Output | 10 MWth district heating |
 | COP | 5.32 (average KDK-01 + KDK-02) |
 | Supply temperature | 70°C |
@@ -323,8 +323,8 @@ The surface facilities are designed to serve Utrecht's mixed-use urban district 
 #### 3. Absorption Chiller
 | Parameter | Value |
 |---|---|
-| Purpose | Provides district cooling in summer using waste geothermal heat |
-| Mode | Summer cooling |
+| Purpose | Provides district cooling using waste geothermal heat |
+| Mode | Cooling |
 | Output | 5 MWth cooling |
 | Type | Heat-driven (no additional electricity required) |
 | Cooling COP | ~0.7 (typical for single-effect absorption chiller) |
