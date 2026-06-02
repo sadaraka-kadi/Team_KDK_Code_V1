@@ -5,7 +5,7 @@
 
 ## Project Overview
 
-This repository contains Team KDK's full data pipeline and analysis for the **SPE Africa Datathon 2026**, focused on the geothermal energy project in Utrecht, Netherlands. The work covers well log data preprocessing, administrative boundary extraction, ThermoGIS formation screening, and geothermal doublet simulation across four enhancement scenarios to assess Utrecht's thermal energy potential against targets of 5, 10, and 15 MWth. An LCOE analysis is provided for the recommended development scenario.
+This repository contains Team KDK's full data pipeline and analysis for the **SPE Africa Datathon 2026**, focused on the geothermal energy project in Utrecht, Netherlands. The work covers well data preprocessing, administrative boundary extraction, ThermoGIS formation screening, and geothermal doublet simulation across four enhancement scenarios to assess Utrecht's thermal energy potential against targets of 5, 10, and 15 MWth. An LCOE analysis is provided for the recommended development scenario.
 
 ---
 
