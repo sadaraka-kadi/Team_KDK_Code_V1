@@ -74,7 +74,7 @@ Team_KDK_Code_V1/
 
 ## Data
 
-> ⚠️ Some raw data files are too large to include in this repo. See [`data/raw/README.md`](data/raw/README.md) for download instructions.
+> ⚠️ Some raw data files are too large to include in this repo. See [`data/raw/README.md`](data/raw/README.md).
 
 ## Large files — download manually before running notebooks
 
