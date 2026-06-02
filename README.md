@@ -490,6 +490,7 @@ git clone https://github.com/sadaraka-kadi/Team_KDK_Code_V1.git
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
+pip install pythermogis --index-url https://ci.tno.nl/gitlab/api/v4/projects/18271/packages/pypi/simple
 ```
 
 3. Download large data files — see [`data/raw/README.md`](data/raw/README.md) for instructions
