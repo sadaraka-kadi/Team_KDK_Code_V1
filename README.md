@@ -75,7 +75,6 @@ Team_KDK_Code_V1/
 ## Data
 
 > ⚠️ Some raw data files are too large to include in this repo. See [`data/raw/README.md`](data/raw/README.md) for download instructions.
-## Data
 >
 > 📝 Processed data and simulation outputs are not included — run notebooks 01–04 in order to regenerate all files in `data/processed/` and `outputs/`.
 
