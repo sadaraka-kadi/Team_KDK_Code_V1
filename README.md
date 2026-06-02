@@ -56,13 +56,16 @@ Team_KDK_Code_V1/
 │   ├── stim_viable.csv              # Stimulation — viable doublet locations
 │   ├── stim_hp_results.nc           # STIM+HP — full spatial grid
 │   ├── stim_hp_viable.csv           # STIM+HP — viable doublet locations
-│   ├── stim_hp_lookup.json          # STIM+HP — coordinate lookup (4,971 grid cells)
 │   ├── nearby_stim_hp.csv           # STIM+HP — viable locations near Utrecht city
 │   └── power_and_npv_map.png        # STIM+HP — top 3 locations map
 │
 ├── reports/
-│   ├── Team_KDK_LCOE.xlsx           # LCOE spreadsheet
-│   └── lcoe_parameters.md           # LCOE parameter justifications
+│   ├── Team_KDK_LCOE.xlsx             # LCOE spreadsheet
+|   ├── lcoe_parameters.md             # LCOE parameter justifications
+|   ├── nearby_stim_hp.csv             # STIM+HP — viable locations near Utrecht city
+|   ├── power_and_npv_map.png          # STIM+HP — top 3 locations map
+|   ├── stim_hp_viable.csv             # STIM+HP — viable doublet locations
+│   └── surface_facilities.md          # Surface facilities for Utrecht
 │
 ├── .gitignore
 ├── LICENSE
