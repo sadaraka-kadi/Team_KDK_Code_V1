@@ -29,7 +29,7 @@ The surface facilities are designed to serve Utrecht's mixed-use urban district 
           │                     │
           ▼                     ▼
    ┌─────────────┐      ┌──────────────────┐
-   │  Heat Pump  │      │ Absorption        │
+   │  Heat Pump  │      │ Absorption       │
    │  (STIM+HP)  │      │ Chiller          │
    │  10 MWth    │      │  5 MWth cooling  │
    └──────┬──────┘      └────────┬─────────┘
@@ -38,16 +38,16 @@ The surface facilities are designed to serve Utrecht's mixed-use urban district 
    ┌─────────────────────────────────────┐
    │           Buffer Tank               │
    │      Thermal Storage (1–2 MWh)      │
-   │    Handles peak demand fluctuations  │
+   │    Handles peak demand fluctuations │
    └──────────────┬──────────────────────┘
                   │
                   ▼
    ┌─────────────────────────────────────┐
    │      District Heating & Cooling     │
-   │           Network (Utrecht)          │
+   │           Network (Utrecht)         │
    │                                     │
    │  🏘 Residential  — comfort heating  │
-   │  🏢 Offices      — heating/cooling  │
+   │  🏢 Offices      — heating/cooling │
    │  🏛 Public       — schools/hospitals│
    └─────────────────────────────────────┘
                   │
