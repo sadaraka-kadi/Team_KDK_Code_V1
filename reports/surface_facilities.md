@@ -13,11 +13,11 @@ The surface facilities are designed to serve Utrecht's mixed-use urban district 
 
 ```
                     SUBSURFACE
-            ┌─────────────────────┐
-            │  KDK-01 + KDK-02   │
+            ┌──────────────────────┐
+            │  KDK-01 + KDK-02     │
             │  Slochteren Aquifer  │
-            │  66°C | 298 m³/h   │
-            └────────┬────────────┘
+            │  66°C | 298 m³/h     │
+            └────────┬─────────────┘
                      │ Hot brine (66°C)
                      ▼
             ┌─────────────────────┐
