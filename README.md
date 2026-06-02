@@ -159,7 +159,6 @@ Scenarios: `BaseCase` (no suffix), `_HP`, `_STIM`, `_STIM_HP`
 | `stim_viable.csv` | Stimulation | Viable doublet locations |
 | `stim_hp_results.nc` | STIM+HP | Full spatial grid |
 | `stim_hp_viable.csv` | STIM+HP | Viable doublet locations |
-| `stim_hp_lookup.json` | STIM+HP | Coordinate lookup for all 4,971 grid cells |
 | `nearby_stim_hp.csv` | STIM+HP | Viable doublet locations close to Utrecht city |
 | `power_and_npv_map` | STIM+HP | Top 3 locations map |
 
