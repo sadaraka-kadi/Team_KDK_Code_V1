@@ -531,10 +531,7 @@ See [`requirements.txt`](requirements.txt) for the full list. Key libraries:
 ## AI Assistance Disclosure
 
 This project used Claude (by Anthropic) as an AI assistant to support code 
-development, documentation, data analysis, and report writing. All simulation 
-results, parameter selections, subsurface interpretations, and conclusions were 
-independently verified and validated by the team. The analysis, findings, and 
-recommendations represent the original work of Team KDK.
+development. All simulation results, parameter selections, subsurface interpretations, and conclusions were independently verified and validated by the team. The analysis, findings, and recommendations represent the original work of Team KDK.
 
 ---
 
